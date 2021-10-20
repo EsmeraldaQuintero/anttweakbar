@@ -267,7 +267,7 @@ int CTwGraphOpenGLCore::Init()
         "out vec4 outColor;"
 // texture2D is deprecated and replaced by texture with GLSL 3.30 but it seems 
 // that on Mac Lion backward compatibility is not ensured.
-#if defined(ANT_OSX) && (MAC_OS_X_VERSION_MAX_ALLOWED >= 1070)
+#if defined(ANT_OSX) && (MAC_OS_X_VERSION_MAX_ALLOWED >= 1070) || defined(_WIN32)
         "void main() { outColor.rgb = fcolor.bgr; outColor.a = fcolor.a * texture(tex, fuv).r; }"
 #else
         "void main() { outColor.rgb = fcolor.bgr; outColor.a = fcolor.a * texture2D(tex, fuv).r; }"
