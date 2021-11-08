@@ -2988,6 +2988,7 @@ CTwBar::CTwBar(const char *_Name)
     //m_Font = g_DefaultNormalFont;
     //m_Font = g_DefaultSmallFont;
     //m_Font = g_DefaultLargeFont;
+	//m_Font = g_DefaultExtraLargeFont;
     m_TitleWidth = 0;
     m_Sep = 1;
 //#pragma warning "lineSep WIP"
@@ -6405,18 +6406,22 @@ bool CTwBar::MouseButton(ETwMouseButtonID _Button, bool _Pressed, int _X, int _Y
                 else if( m_Font==g_DefaultNormalFont )
                     g_TwMgr->SetFont(g_DefaultLargeFont, true);
                 else if( m_Font==g_DefaultLargeFont )
-                    g_TwMgr->SetFont(g_DefaultSmallFont, true);
+					g_TwMgr->SetFont(g_DefaultExtraLargeFont, true);
+				else if (m_Font == g_DefaultExtraLargeFont)
+					g_TwMgr->SetFont(g_DefaultSmallFont, true);
                 else
                     g_TwMgr->SetFont(g_DefaultNormalFont, true);
             }
             else if( _Button==TW_MOUSE_RIGHT )
             {
                 if( m_Font==g_DefaultSmallFont )
-                    g_TwMgr->SetFont(g_DefaultLargeFont, true);
+					g_TwMgr->SetFont(g_DefaultExtraLargeFont, true);
                 else if( m_Font==g_DefaultNormalFont )
                     g_TwMgr->SetFont(g_DefaultSmallFont, true);
                 else if( m_Font==g_DefaultLargeFont )
                     g_TwMgr->SetFont(g_DefaultNormalFont, true);
+				else if (m_Font == g_DefaultExtraLargeFont)
+					g_TwMgr->SetFont(g_DefaultLargeFont, true);
                 else
                     g_TwMgr->SetFont(g_DefaultNormalFont, true);
             }

@@ -58,6 +58,7 @@ CTexFont *TwGenerateFont(const unsigned char *_Bitmap, int _BmWidth, int _BmHeig
 extern CTexFont *g_DefaultSmallFont;
 extern CTexFont *g_DefaultNormalFont;
 extern CTexFont *g_DefaultLargeFont;
+extern CTexFont *g_DefaultExtraLargeFont;
 extern CTexFont *g_DefaultFixed1Font;
 extern CTexFont *g_DefaultFixedRuFont;
 

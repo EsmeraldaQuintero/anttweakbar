@@ -2386,7 +2386,7 @@ int CTwMgr::SetAttrib(int _AttribID, const char *_Value)
         {
             int s;
             int n = sscanf(_Value, "%d", &s);
-            if( n==1 && s>=1 && s<=3 )
+            if( n==1 && s>=1 && s<=4 )
             {
                 if( s==1 )
                     SetFont(g_DefaultSmallFont, true);
@@ -2394,6 +2394,8 @@ int CTwMgr::SetAttrib(int _AttribID, const char *_Value)
                     SetFont(g_DefaultNormalFont, true);
                 else if( s==3 )
                     SetFont(g_DefaultLargeFont, true);
+				else if (s == 4)
+					SetFont(g_DefaultExtraLargeFont, true);
                 return 1;
             }
             else
@@ -2430,7 +2432,7 @@ int CTwMgr::SetAttrib(int _AttribID, const char *_Value)
             } 
             else if( _stricmp(_Value, "default")==0 )
             {
-                if( m_CurrentFont!=g_DefaultSmallFont && m_CurrentFont!=g_DefaultNormalFont && m_CurrentFont!=g_DefaultLargeFont )
+				if (m_CurrentFont != g_DefaultSmallFont && m_CurrentFont != g_DefaultNormalFont && m_CurrentFont != g_DefaultLargeFont && m_CurrentFont != g_DefaultExtraLargeFont)
                 {
                     if( m_CurrentFont == g_DefaultFixed1Font )
                         m_FontResizable = true;
@@ -2672,6 +2674,8 @@ ERetType CTwMgr::GetAttrib(int _AttribID, std::vector<double>& outDoubles, std::
             outDoubles.push_back(2);
         else if( m_CurrentFont==g_DefaultLargeFont )
             outDoubles.push_back(3);
+		else if (m_CurrentFont == g_DefaultExtraLargeFont )
+			outDoubles.push_back(3);
         else
             outDoubles.push_back(0); // should not happened
         return RET_DOUBLE;

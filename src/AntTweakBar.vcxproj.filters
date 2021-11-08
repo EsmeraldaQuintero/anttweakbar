@@ -203,6 +203,9 @@
     <None Include="FontSmall.pgm">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="res\FontExtraLarge.pgm">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="res\FontChars.txt">
